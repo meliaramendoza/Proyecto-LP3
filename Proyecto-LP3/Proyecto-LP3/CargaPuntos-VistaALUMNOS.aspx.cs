@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Globalization;
 
 namespace Proyecto_LP3
 {
@@ -43,11 +44,12 @@ namespace Proyecto_LP3
             string carrera = txtCarreraAlumnos.Text;
             string curso = txtCursoAlumnos.Text;
             DateTime fecha = DateTime.Parse(txtFechaActividadAlumnos.Text);
+            string fechasalida = fecha.ToString("G", CultureInfo.CreateSpecificCulture("en-US")); //conversor de formato de horoario al requerido por sql
             string acti = txtActiAlumnos.Text;
             int creditos = int.Parse(txtCreditosAcumuladosAlumnos.Text);
 
             connection.Open();
-            SqlCommand comand = new SqlCommand("Insert into tab_Alum values ('" + codigo + "','" + nombres + "','" + apellidos + "','" + carrera + "','" + curso + "','" + fecha + "','" + acti + "','" + creditos + "')", connection);
+            SqlCommand comand = new SqlCommand("Insert into tab_Alum values ('" + codigo + "','" + nombres + "','" + apellidos + "','" + carrera + "','" + curso + "','" + fechasalida + "','" + acti + "','" + creditos + "')", connection);
             comand.ExecuteNonQuery();
             connection.Close();
 
@@ -72,5 +74,6 @@ namespace Proyecto_LP3
 
         }
 
+        
     }
 }

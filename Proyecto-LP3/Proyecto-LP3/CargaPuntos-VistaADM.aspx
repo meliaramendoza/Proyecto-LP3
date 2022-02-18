@@ -61,7 +61,7 @@
                 <td style="width: 293px; font-weight: bold; font-family: 'Arial Narrow'; font-size: medium; height: 40px;">Fecha:</td>
                 <td style="height: 40px">
                     <strong>
-                    <asp:TextBox ID="tbxFecha" runat="server" TextMode="DateTime">MM/DD/AAAA</asp:TextBox>
+                    <asp:TextBox ID="tbxFecha" runat="server" TextMode="DateTime">DD/MM/AAAA</asp:TextBox>
                     </strong>
                 </td>
             </tr>
