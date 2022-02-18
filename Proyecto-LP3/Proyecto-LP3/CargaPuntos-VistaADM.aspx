@@ -53,15 +53,15 @@
                 </td>
             </tr>
             <tr>
-                <td style="width: 293px; font-weight: bold; font-family: 'Arial Narrow'; font-size: medium; height: 40px;">&nbsp;</td>
+                <%--<td style="width: 293px; font-weight: bold; font-family: 'Arial Narrow'; font-size: medium; height: 40px;">&nbsp;</td>
                 <td style="height: 40px; font-weight: bold;">
                     &nbsp;&nbsp;&nbsp;&nbsp; MM/DD/AAAA</td>
-            </tr>
+            </tr>--%>
             <tr>
                 <td style="width: 293px; font-weight: bold; font-family: 'Arial Narrow'; font-size: medium; height: 40px;">Fecha:</td>
                 <td style="height: 40px">
                     <strong>
-                    <asp:TextBox ID="tbxFecha" runat="server" TextMode="DateTime"></asp:TextBox>
+                    <asp:TextBox ID="tbxFecha" runat="server" TextMode="DateTime">MM/DD/AAAA</asp:TextBox>
                     </strong>
                 </td>
             </tr>

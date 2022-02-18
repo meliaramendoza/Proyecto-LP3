@@ -66,7 +66,7 @@
                         <td style="height: 20px; width: 266px">
                             <asp:Button ID="btnLogin" runat="server" Font-Bold="True" Height="34px" CssClass="btn btn-primary btn-dark" OnClick="btnLogin_Click" style="margin-left: 0" Text="Iniciar Sesión" Width="225px" />
                         </td>
-                        <td style="height: 20px"></td>
+                        <td style="height: 20px">&nbsp;</td>
                         <td style="height: 20px"></td>
                     </tr>
                 </table>
