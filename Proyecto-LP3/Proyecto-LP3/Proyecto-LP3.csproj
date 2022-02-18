@@ -106,10 +106,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="244201719_263067802488206_936819081549297112_n.png" />
-    <Content Include="About.aspx" />
-    <Content Include="CargaPuntos-VistaADM.aspx" />
-    <Content Include="CargaPuntos-VistaALUMNOS.aspx" />
-    <Content Include="Contact.aspx" />
+    <Content Include="Info\About.aspx" />
+    <Content Include="CargaDatos\CargaPuntos-VistaADM.aspx" />
+    <Content Include="CargaDatos\CargaPuntos-VistaALUMNOS.aspx" />
+    <Content Include="Info\Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -127,8 +127,8 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="InicioSesion.aspx" />
-    <Content Include="MisCreditosAcademicos.aspx" />
+    <Content Include="default.aspx" />
+    <Content Include="VistaPuntos\MisCreditosAcademicos.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -158,7 +158,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
-    <Content Include="Solicitudes.aspx" />
+    <Content Include="VistaPuntos\Solicitudes.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -166,50 +166,50 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
+    <Compile Include="Info\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="About.aspx.designer.cs">
+    <Compile Include="Info\About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="CargaPuntos-VistaADM.aspx.cs">
+    <Compile Include="CargaDatos\CargaPuntos-VistaADM.aspx.cs">
       <DependentUpon>CargaPuntos-VistaADM.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CargaPuntos-VistaADM.aspx.designer.cs">
+    <Compile Include="CargaDatos\CargaPuntos-VistaADM.aspx.designer.cs">
       <DependentUpon>CargaPuntos-VistaADM.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CargaPuntos-VistaALUMNOS.aspx.cs">
+    <Compile Include="CargaDatos\CargaPuntos-VistaALUMNOS.aspx.cs">
       <DependentUpon>CargaPuntos-VistaALUMNOS.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CargaPuntos-VistaALUMNOS.aspx.designer.cs">
+    <Compile Include="CargaDatos\CargaPuntos-VistaALUMNOS.aspx.designer.cs">
       <DependentUpon>CargaPuntos-VistaALUMNOS.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Contact.aspx.cs">
+    <Compile Include="Info\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
+    <Compile Include="Info\Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="InicioSesion.aspx.cs">
-      <DependentUpon>InicioSesion.aspx</DependentUpon>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="InicioSesion.aspx.designer.cs">
-      <DependentUpon>InicioSesion.aspx</DependentUpon>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MisCreditosAcademicos.aspx.cs">
+    <Compile Include="VistaPuntos\MisCreditosAcademicos.aspx.cs">
       <DependentUpon>MisCreditosAcademicos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MisCreditosAcademicos.aspx.designer.cs">
+    <Compile Include="VistaPuntos\MisCreditosAcademicos.aspx.designer.cs">
       <DependentUpon>MisCreditosAcademicos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -227,11 +227,11 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
-    <Compile Include="Solicitudes.aspx.cs">
+    <Compile Include="VistaPuntos\Solicitudes.aspx.cs">
       <DependentUpon>Solicitudes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Solicitudes.aspx.designer.cs">
+    <Compile Include="VistaPuntos\Solicitudes.aspx.designer.cs">
       <DependentUpon>Solicitudes.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
