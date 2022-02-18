@@ -29,7 +29,7 @@ namespace Proyecto_LP3
             txtNombresAlumnos.Text = "";
             txtCarreraAlumnos.Text = "";
             txtCursoAlumnos.Text = "";
-            tbxFechaActividadAlumnos.Text = "";
+            txtFechaActividadAlumnos.Text = "";
             txtActiAlumnos.Text = "";
             txtCreditosAcumuladosAlumnos.Text = "";
         }
@@ -42,7 +42,7 @@ namespace Proyecto_LP3
             string apellidos = txtApellidosAlumnos.Text;
             string carrera = txtCarreraAlumnos.Text;
             string curso = txtCursoAlumnos.Text;
-            DateTime fecha = DateTime.Parse(tbxFechaActividadAlumnos.Text);
+            DateTime fecha = DateTime.Parse(txtFechaActividadAlumnos.Text);
             string acti = txtActiAlumnos.Text;
             int creditos = int.Parse(txtCreditosAcumuladosAlumnos.Text);
 
