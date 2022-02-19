@@ -15,11 +15,11 @@ namespace Proyecto_LP3
         protected void Page_Load(object sender, EventArgs e)
         {
             //A traves de este bloque al cargar la pagina, se hace visible el nombre del usuario el cual accedio
-            if (Session["usuariologueado"] != null)
-            {
+            //if (Session["usuariologueado"] != null)
+            //{
                 string usuariologueado = Session["usuariologueado"].ToString();
                 lblBienvenida.Text = "¡Bienvenido / a, " + usuariologueado + "!";
-            }
+            //}
         }
 
         SqlConnection connection = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = CAE; Integrated Security=True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False");
