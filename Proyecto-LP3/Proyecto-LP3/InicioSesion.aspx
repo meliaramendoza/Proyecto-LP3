@@ -1,5 +1,5 @@
 ﻿
-<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="default.aspx.cs" Inherits="Proyecto_LP3.InicioSesion" %>
+<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="InicioSesion.aspx.cs" Inherits="Proyecto_LP3.InicioSesion" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -7,7 +7,7 @@
         <div>
             <div>
                 <div style="height: 253px">
-                <div>
+                <div style="font-weight: 700">
 
                     <table class="nav-justified" style="height: 52px">
                         <tr>
