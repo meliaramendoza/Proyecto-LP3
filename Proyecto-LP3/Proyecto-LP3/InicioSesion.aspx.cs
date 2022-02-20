@@ -16,13 +16,13 @@ namespace Proyecto_LP3
 
         }
 
-        //Hacemos la conexion con la base de datos, en este caso la base de datos escogida y utilizada es Sql Server. Para conectarnos
-        //le proporcionamos la cadena de conexión.
+        /*Hacemos la conexion con la base de datos, en este caso la base de datos escogida y utilizada es Sql Server. Para conectarnos
+        le proporcionamos la cadena de conexión.*/
         SqlConnection connection = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = CAE; Integrated Security=True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False");
 
-        //Método que al clickear sobre el botón "Iniciar Sesión" obtiene lo introducido por el usuario a través del textbox y verifica si estos
-        //datos coinciden con los datos que se encuentran dentro de la tabla Users de la base de datos. Dicha tabla contiene 3 columnas, las 
-        //cuales son: Usuario, Contrasena y tipoUsuario.
+        /*Método que al clickear sobre el botón "Iniciar Sesión" obtiene lo introducido por el usuario a través del textbox y verifica si estos
+        datos coinciden con los datos que se encuentran dentro de la tabla Users de la base de datos. Dicha tabla contiene 3 columnas, las 
+        cuales son: Usuario, Contrasena y tipoUsuario.*/
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             connection.Open();
@@ -57,8 +57,8 @@ namespace Proyecto_LP3
             }
             else
             {
-                //Envia un mensaje de error, en el caso de que no se haya podido iniciar la sesión ya sea por:
-                //Error de nombre de usuario, contraseña o en el caso que el usuario introducido no se haya sido registrado
+                /*Envia un mensaje de error, en el caso de que no se haya podido iniciar la sesión ya sea por:
+                /Error de nombre de usuario, contraseña o en el caso que el usuario introducido no se haya sido registrado.*/
                 labelMensajeError.Text = "Error de Usuario o Contraseña";
             }
         }

@@ -16,12 +16,12 @@ namespace Proyecto_LP3
 
         }
 
-        //Hacemos la conexion con la base de datos, en este caso la base de datos escogida y utilizada es Sql Server. Para conectarnos
-        //le proporcionamos la cadena de conexión.
+        /*Hacemos la conexion con la base de datos, en este caso la base de datos escogida y utilizada es Sql Server. Para conectarnos
+        le proporcionamos la cadena de conexión.*/
         SqlConnection connection = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = CAE; Integrated Security=True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False");
 
-        //Método que realiza una búsqueda de los créditos del alumno po número de código y los hace visible a través de un GridView.
-        //Dentro del GridView se puede visualizar la Fecha de la Actividad, la actividad realizada y el total d créditos obtenidos por la actividad.
+        /*Método que realiza una búsqueda de los créditos del alumno po número de código y los hace visible a través de un GridView.
+        Dentro del GridView se puede visualizar la Fecha de la Actividad, la actividad realizada y el total d créditos obtenidos por la actividad.*/
         protected void btnBusquedaCreditosPorCodigo_Click(object sender, EventArgs e)
         {
             int codigo = int.Parse(txtBusqCodigo.Text);

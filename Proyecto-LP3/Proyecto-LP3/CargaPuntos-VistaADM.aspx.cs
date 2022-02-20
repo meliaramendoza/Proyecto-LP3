@@ -28,12 +28,12 @@ namespace Proyecto_LP3
             }
         }
 
-        //Hacemos la conexion con la base de datos, en este caso la base de datos escogida y utilizada es Sql Server. Para conectarnos
-        //le proporcionamos la cadena de conexión.
+        /*Hacemos la conexion con la base de datos, en este caso la base de datos escogida y utilizada es Sql Server. Para conectarnos
+        le proporcionamos la cadena de conexión.*/
         SqlConnection connection = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = CAE; Integrated Security=True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False");
 
-        //Carga los datos para la solicitud de acreditación de créditos del alumno/a, a la tabla tab_Alum dentro de la base de datos.
-        //Y una vez enviados, éstos datos se visualizan 
+        /*Carga los datos para la solicitud de acreditación de créditos del alumno/a, a la tabla tab_Alum dentro de la base de datos.
+        Y una vez enviados, éstos datos se visualizan.*/ 
         protected void btnCargaDatosADM_Click(object sender, EventArgs e)
         {
             int codigo = int.Parse(tbxCodigo.Text);
@@ -59,10 +59,10 @@ namespace Proyecto_LP3
 
         }
 
-        //Con este método, se muestran todos los datos de todos los alumnos que enviaron sus respectivas solicitudes para la acreditación 
-        //de sus respectivos créditos, ordenados por número de código de manera ascendente.
-        //Datos alojados en la tabla tab_Alum de la base de datos. Esta funcionalidad sólo la tiene habilitada el administrador o encargado
-        //general de contabilizar los créditos a los alumnos. 
+        /*Con este método, se muestran todos los datos de todos los alumnos que enviaron sus respectivas solicitudes para la acreditación 
+        de sus respectivos créditos, ordenados por número de código de manera ascendente.
+        Datos alojados en la tabla tab_Alum de la base de datos. Esta funcionalidad sólo la tiene habilitada el administrador o encargado
+        general de contabilizar los créditos a los alumnos.*/
         void listaAlum()
         {
             SqlCommand comand = new SqlCommand("Select Codigo,Nombres,Apellidos,Carrera,Curso,Fecha,Actividad,CreditosAcumulados from tab_Alum ORDER BY Codigo ASC", connection);
@@ -82,14 +82,15 @@ namespace Proyecto_LP3
             tbxCarrera.Text = "";
             tbxCurso.Text = "";
             tbxActi.Text = "";
+            tbxCA.Text = "";
 
             //Mantenemos el formato de la fecha
             tbxFecha.Text = "DD/MM/AAAA";
         }
 
-        //Con este método logramos actualizar los datos anteriormente introducidos en la base de datos. En el caso de que haya algo que modificar.
-        //Esta funcionalidad sólo la tiene habilitada el administrador o encargado general de asignar, actualizar o eliminar los respectivos créditos
-        //académicos extracurriculares correspondientes a cada alumno. En este caso actualizar los datos anteriormente introducidos.
+        /*Con este método logramos actualizar los datos anteriormente introducidos en la base de datos. En el caso de que haya algo que modificar.
+        Esta funcionalidad sólo la tiene habilitada el administrador o encargado general de asignar, actualizar o eliminar los respectivos créditos
+        académicos extracurriculares correspondientes a cada alumno. En este caso actualizar los datos anteriormente introducidos.*/
         protected void btnActualizarDatosADM_Click(object sender, EventArgs e)
         {
             int codigo = int.Parse(tbxCodigo.Text);
@@ -98,11 +99,12 @@ namespace Proyecto_LP3
             string carrera = tbxCarrera.Text;
             string curso = tbxCurso.Text;
             DateTime fecha = DateTime.Parse(tbxFecha.Text);
+            string fechasalida = fecha.ToString("G", CultureInfo.CreateSpecificCulture("en-US")); //conversor de formato de horoario al requerido por sql
             string acti = tbxActi.Text;
             int creditos = int.Parse(tbxCA.Text);
 
             connection.Open();
-            SqlCommand comand = new SqlCommand("Update tab_Alum set Nombres = '" + nombres + "', Apellidos = '" + apellidos + "', Carrera = '" + carrera + "', Curso = '" + curso + "', Fecha = '" + fecha + "', Actividad = '" + acti + "', CreditosAcumulados = '" + creditos + "' where Codigo = '" + codigo + "'", connection);
+            SqlCommand comand = new SqlCommand("Update tab_Alum set Nombres = '" + nombres + "', Apellidos = '" + apellidos + "', Carrera = '" + carrera + "', Curso = '" + curso + "', Fecha = '" + fechasalida + "', Actividad = '" + acti + "', CreditosAcumulados = '" + creditos + "' where Codigo = '" + codigo + "'", connection);
             comand.ExecuteNonQuery();
             connection.Close();
 
@@ -113,9 +115,9 @@ namespace Proyecto_LP3
             limpiar();
         }
 
-        //Con este método logramos eliminar los datos anteriormente introducidos en la base de datos, proporcionándole el número de código 
-        //Esta funcionalidad sólo la tiene habilitada el administrador o encargado general de asignar, actualizar o eliminar los respectivos créditos
-        //académicos extracurriculares correspondientes a cada alumno. En este caso eliminar los datos anteriormente introducidos.
+        /*Con este método logramos eliminar los datos anteriormente introducidos en la base de datos, proporcionándole el número de código 
+        Esta funcionalidad sólo la tiene habilitada el administrador o encargado general de asignar, actualizar o eliminar los respectivos créditos
+        académicos extracurriculares correspondientes a cada alumno. En este caso eliminar los datos anteriormente introducidos.*/
         protected void btnEliminarDatosADM_Click(object sender, EventArgs e)
         {
             int codigo = int.Parse(tbxCodigo.Text);

@@ -15,13 +15,13 @@ namespace Proyecto_LP3
 
         }
 
-        //Hacemos la conexion con la base de datos, en este caso la base de datos escogida y utilizada es Sql Server. Para conectarnos
-        //le proporcionamos la cadena de conexión.
+        /*Hacemos la conexion con la base de datos, en este caso la base de datos escogida y utilizada es Sql Server. Para conectarnos
+        le proporcionamos la cadena de conexión.*/
         SqlConnection connection = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = CAE; Integrated Security=True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False");
 
-        //Método que al clickear sobre el botón "Enviar Registro", envia los datos necesarios para registrar a dicho usuario.
-        //Datos como: Nombre de Usuario, Contraseña y tipo de usuario. Éstos datos son introducidos a través de los textboxs
-        //y son insertados a la tabla Users, para posteriormente poder dar inicio de sesión con el usuario y contraseña crados. 
+        /*Método que al clickear sobre el botón "Enviar Registro", envia los datos necesarios para registrar a dicho usuario.
+        Datos como: Nombre de Usuario, Contraseña y tipo de usuario. Éstos datos son introducidos a través de los textboxs
+        y son insertados a la tabla Users, para posteriormente poder dar inicio de sesión con el usuario y contraseña crados.*/ 
         protected void btnEnviarRegistro_Click(object sender, EventArgs e)
         {
             string nombreUsuario = txtNombreUsuario.Text;
@@ -38,8 +38,8 @@ namespace Proyecto_LP3
             limpiar();
         }
 
-        //Método que una vez enviado los datos para el registro de usuario, limpia los campos de los textboxs:
-        //Nombre de Usuario y Contraseña
+        /*Método que una vez enviado los datos para el registro de usuario, limpia los campos de los textboxs:
+        Nombre de Usuario y Contraseña*/
         void limpiar()
         {
             txtNombreUsuario.Text = "";
@@ -49,7 +49,6 @@ namespace Proyecto_LP3
         //Al clickear sobre el botón "Iniciar Sesión", éste me redirige a la ventana de InicioSesion
         protected void btnIniciarsesion_Click(object sender, EventArgs e)
         {
-            //Me redirige a la ventana MisCreditosAcademicos
             Response.Redirect("InicioSesion.aspx");
         }
     }

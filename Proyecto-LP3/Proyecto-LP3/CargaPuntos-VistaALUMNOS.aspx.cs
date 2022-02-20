@@ -22,8 +22,8 @@ namespace Proyecto_LP3
             }
         }
 
-        //Hacemos la conexion con la base de datos, en este caso la base de datos escogida y utilizada es Sql Server. Para conectarnos
-        //le proporcionamos la cadena de conexión.
+        /*Hacemos la conexion con la base de datos, en este caso la base de datos escogida y utilizada es Sql Server. Para conectarnos
+        le proporcionamos la cadena de conexión.*/
         SqlConnection connection = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = CAE; Integrated Security=True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False");
 
         //Método que limpia los campos de los textboxs una vez cargados éstos en la base de datos
@@ -40,8 +40,8 @@ namespace Proyecto_LP3
             txtFechaActividadAlumnos.Text = "DD/MM/AAAA";
         }
 
-        //Carga los datos para la solicitud de acreditación de créditos del alumno/a, a la tabla tab_Alum dentro de la 
-        //base de datos. Y una vez enviados estos datos se visualiza la fecha, actividad y los créditos acumulados del alumno/a
+        /*Carga los datos para la solicitud de acreditación de créditos del alumno/a, a la tabla tab_Alum dentro de la 
+        base de datos. Y una vez enviados estos datos se visualiza la fecha, actividad y los créditos acumulados del alumno/a. */
         protected void btnEnviarDatosALUMNOS_Click(object sender, EventArgs e)
         {
             int codigo = int.Parse(txtCodigoAlumnos.Text);
@@ -73,9 +73,9 @@ namespace Proyecto_LP3
             GridView1.DataBind();
         }
 
-        //Me redirige a la ventana MisCreditosAcademicos
-        //Este método lo que hace es hacer visible la fecha, actividad y los creditos obtenidos por los alumnos
-        //proporcionándo el número de código del interesado.
+        /*Me redirige a la ventana MisCreditosAcademicos
+        Este método lo que hace es hacer visible la fecha, actividad y los creditos obtenidos por los alumnos
+        proporcionándo el número de código del interesado.*/
         protected void btnVerMisCreditos_Click(object sender, EventArgs e)
         {
             Response.Redirect("MisCreditosAcademicos.aspx");
