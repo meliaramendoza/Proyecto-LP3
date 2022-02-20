@@ -8,7 +8,7 @@
 
         <table class="nav-justified">
             <tr>
-                <td style="font-size: xx-large; font-weight: bold; font-family: 'Times New Roman', Times, serif; height: 98px;">Solicitudes Pendientes [Posiblemente No se utilice]</td>
+                <td style="font-size: xx-large; font-weight: bold; font-family: 'Times New Roman', Times, serif; height: 98px;">Solicitudes Pendientes</td>
             </tr>
             <tr>
                 <td style="height: 109px">

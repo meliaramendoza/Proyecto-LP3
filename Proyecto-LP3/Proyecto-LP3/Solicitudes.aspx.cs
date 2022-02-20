@@ -13,11 +13,16 @@ namespace Proyecto_LP3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Lista todos los elementos de la tabla tab_Alum al cargarse inicialmente la página
             listaAlum();
         }
 
+        //Hacemos la conexion con la base de datos, en este caso la base de datos escogida y utilizada es Sql Server. Para conectarnos
+        //le proporcionamos la cadena de conexión.
         SqlConnection connection = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = CAE; Integrated Security=True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False");
 
+        //Método que lista todos los datos de la tabla tab_Alum, en donde se encuentra registrado todas las actividades realizadas por cada alumno,
+        //con sus respectivas fechas y los creditos obtenidos por cada actividad.
         void listaAlum()
         {
             SqlCommand comand = new SqlCommand("Select * from tab_Alum", connection);
@@ -28,66 +33,16 @@ namespace Proyecto_LP3
             GridView1.DataBind();
         }
 
+        //Método que actualiza los datos de los alumnos. 
         protected void btnActualizarDatosADMSol_Click(object sender, EventArgs e)
         {
 
         }
 
+        //Método que elimina los datos de los alumnos. 
         protected void btnEliminarDatosADM_Click(object sender, EventArgs e)
         {
 
         }
-
-        /*
-        protected void btnActualizarDatosADMSol_Click(object sender, EventArgs e)
-        {
-            int codigo = int.Parse(tbxCodigo.Text);
-            string nombres = tbxNombres.Text;
-            string apellidos = tbxApellidos.Text;
-            string carrera = tbxCarrera.Text;
-            string curso = tbxCurso.Text;
-            DateTime fecha = DateTime.Parse(tbxFecha.Text);
-            string acti = tbxActi.Text;
-            int creditos = int.Parse(tbxCA.Text);
-
-            connection.Open();
-            SqlCommand comand = new SqlCommand("Update tab_Alum set Nombres = '" + nombres + "', Apellidos = '" + apellidos + "', Carrera = '" + carrera + "', Curso = '" + curso + "', Fecha = '" + fecha + "', Actividad = '" + acti + "', CreditosAcumulados = '" + creditos + "' where Codigo = '" + codigo + "'", connection);
-            comand.ExecuteNonQuery();
-            connection.Close();
-
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Actualizados con éxito!');", true);
-
-            listaAlum();
-
-            limpiar();
-        }
-
-        protected void btnEliminarDatosADMXSol_Click(object sender, EventArgs e)
-        {
-            int codigo = int.Parse(tbxCodigo.Text);
-            connection.Open();
-            SqlCommand comand = new SqlCommand("Delete tab_Alum where Codigo = '" + codigo + "'", connection);
-            comand.ExecuteNonQuery();
-            connection.Close();
-
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Eliminados con éxito!');", true);
-
-            listaAlum();
-
-            limpiar();
-        }
-
-        void limpiar()
-        {
-            tbxCodigo.Text = "";
-            tbxNombres.Text = "";
-            tbxApellidos.Text = "";
-            tbxCarrera.Text = "";
-            tbxCurso.Text = "";
-            tbxFecha.Text = "";
-            tbxActi.Text = "";
-            tbxCA.Text = "";
-        }
-        */
     }
 }

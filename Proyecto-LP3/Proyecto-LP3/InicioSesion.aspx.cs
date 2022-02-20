@@ -16,8 +16,13 @@ namespace Proyecto_LP3
 
         }
 
+        //Hacemos la conexion con la base de datos, en este caso la base de datos escogida y utilizada es Sql Server. Para conectarnos
+        //le proporcionamos la cadena de conexión.
         SqlConnection connection = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = CAE; Integrated Security=True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False");
 
+        //Método que al clickear sobre el botón "Iniciar Sesión" obtiene lo introducido por el usuario a través del textbox y verifica si estos
+        //datos coinciden con los datos que se encuentran dentro de la tabla Users de la base de datos. Dicha tabla contiene 3 columnas, las 
+        //cuales son: Usuario, Contrasena y tipoUsuario.
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             connection.Open();
@@ -28,19 +33,20 @@ namespace Proyecto_LP3
             DataTable dt = new DataTable();
             sda.Fill(dt);
 
-            //Si hay registros dentro de la tabla, se da inicio a la sesion
+            //Si hay registros dentro de la tabla Users, se da inicio a la sesión
             if (dt.Rows.Count == 1)
             {
                 connection.Close();
-                //A traves de esta linea al cargar la pagina, se hace visible el nombre del usuario el cual accedio
+
+                //A traves de esta linea al cargar la pagina, se hace visible el nombre del usuario el cual inicio sesión
                 Session["usuariologueado"] = txtUsuario.Text;
 
-                //Response.Redirect("CargaPuntos-VistaALUMNOS.aspx");
-
+                //Si el usuario es ALUMNO, se le redirige a la venta CargaPuntos-VistaALUMNOS 
                 if (dt.Rows[0][2].ToString() == "ALUMNO")
                 {
                     Response.Redirect("CargaPuntos-VistaALUMNOS.aspx");
                 }
+                //Si el usuario es ADMINISTRADOR, se le redirige a la venta CargaPuntos-VistaADM
                 else
                 {
                     if (dt.Rows[0][2].ToString() == "ADMINISTRADOR")
@@ -51,31 +57,17 @@ namespace Proyecto_LP3
             }
             else
             {
-                //Envia un mensaje de error, no se pudo iniciar la sesion
+                //Envia un mensaje de error, en el caso de que no se haya podido iniciar la sesión ya sea por:
+                //Error de nombre de usuario, contraseña o en el caso que el usuario introducido no se haya sido registrado
                 labelMensajeError.Text = "Error de Usuario o Contraseña";
             }
-
-            /*
-            if (dt.Rows.Count == 1)
-            {
-                connection.Close();
-                //A traves de esta linea al cargar la pagina, se hace visible el nombre del usuario el cual accedio
-                Session["usuariologueado"] = txtUser.Text;
-
-                Response.Redirect("CargaPuntos-VistaALUMNOS.aspx");
-            }
-            else
-            {
-                lblError.Text = "Error de Usuario o Contraseña";
-            }
-            */
         }
 
-        
+        //Al clickear sobre el botón Registro, éste me redirige a la ventana Registro
         protected void btnRegistro_Click(object sender, EventArgs e)
         {
             Response.Redirect("Registro.aspx");
         }
-        
+
     }
 }

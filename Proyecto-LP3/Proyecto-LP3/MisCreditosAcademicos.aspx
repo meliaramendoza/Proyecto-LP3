@@ -11,12 +11,12 @@
             </tr>
             <tr>
                 <td style="height: 63px;" colspan="2">
-                    <table class="nav-justified" style="height: 551px">
+                    <table class="nav-justified" style="height: 447px">
                         <tr>
                             <td style="height: 65px">
-                                <table class="nav-justified">
+                                <table class="nav-justified" style="height: 152px">
                                     <tr>
-                                        <td class="modal-lg" style="width: 227px; font-weight: bold; font-family: 'Arial Narrow'; font-size: medium; height: 40px;">Ingrese su Nº de Código:</td>
+                                        <td class="modal-lg" style="width: 357px; font-weight: bold; font-family: 'Arial Narrow'; font-size: medium; height: 40px;">Porfavor, ingrese de nuevo su Nº de Código:</td>
                                         <td>&nbsp;</td>
                                     </tr>
                                     <tr>
