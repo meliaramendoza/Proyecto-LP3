@@ -21,7 +21,7 @@ namespace Proyecto_LP3
 
         /*Método que al clickear sobre el botón "Enviar Registro", envia los datos necesarios para registrar a dicho usuario.
         Datos como: Nombre de Usuario, Contraseña y tipo de usuario. Éstos datos son introducidos a través de los textboxs
-        y son insertados a la tabla Users, para posteriormente poder dar inicio de sesión con el usuario y contraseña crados.*/ 
+        y son insertados a la tabla Users, para posteriormente poder dar inicio de sesión con el usuario y contraseña creados.*/ 
         protected void btnEnviarRegistro_Click(object sender, EventArgs e)
         {
             string nombreUsuario = txtNombreUsuario.Text;
