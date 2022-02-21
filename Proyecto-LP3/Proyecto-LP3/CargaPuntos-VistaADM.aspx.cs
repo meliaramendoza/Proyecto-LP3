@@ -132,13 +132,5 @@ namespace Proyecto_LP3
 
             limpiar();
         }
-
-        /*
-        //Nos redirige directamente a la ventana de solicitudes
-        protected void btnSolicitudes_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Solicitudes.aspx");
-        }
-        */
     }
 }

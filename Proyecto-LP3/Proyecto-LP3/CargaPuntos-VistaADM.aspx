@@ -79,7 +79,6 @@
                     <asp:Button ID="btnEliminar" runat="server" BackColor="#333333" Font-Bold="True" ForeColor="White" Height="34px" Text="Eliminar Datos" Width="157px" OnClick="btnEliminarDatosADM_Click" OnClientClick="return confirm('Está seguro que desea eliminar?')" style="margin-top: 0; font-weight: bold;" />
                     <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </b>
-                    <asp:Button ID="btnSolicitudes" runat="server" BackColor="#333333" Font-Bold="True" ForeColor="White" Height="40px" Text="Solicitudes Disponibles" Width="210px" style="font-weight: bold" />
                 </td>
             </tr>
             <tr>
